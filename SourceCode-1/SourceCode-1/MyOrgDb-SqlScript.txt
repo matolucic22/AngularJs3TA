@@ -1,0 +1,33 @@
+create database [MyOrg]
+USE [MyOrg]
+CREATE TABLE [Department](
+	[Did] [int] IDENTITY(1000,1) NOT NULL,
+	[DName] [varchar](50) NOT NULL,
+	[HOD] [varchar](50) NULL,
+	[Gender] [varchar](50) NULL CONSTRAINT [DF_Department_Gender]  DEFAULT ('M'),
+ CONSTRAINT [PK_Department] PRIMARY KEY CLUSTERED 
+(
+	[Did] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+/****** Object:  Table [dbo].[Employee]    Script Date: 15-03-2016 12:44:29 ******/
+CREATE TABLE [Employee](
+	[Eid] [int] NOT NULL,
+	[EName] [varchar](50) NOT NULL,
+	[ESalary] [float] NOT NULL,
+	[EGender] [varchar](50) NOT NULL,
+	[EDOB] [datetime] NOT NULL,
+	[Did] [int] NULL,
+	[UpdatedDate] [timestamp] NULL,
+ CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED 
+(
+	[Eid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+ALTER TABLE [Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_Department] FOREIGN KEY([Did])
+REFERENCES [Department] ([Did])
+GO
+ALTER TABLE [Employee] CHECK CONSTRAINT [FK_Employee_Department]
+GO

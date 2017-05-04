@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <ul>
+        <li><a href="#/Department">Department</a></li>
+        <li><a href="#/Employee">Employee</a></li>
+    </ul>
+
+    <div>
+        <div ng-view></div>
+    </div>
+
+</body>
+</html>
+<script src="Scripts/angular-route.min.js"></script>
+<script src="Scripts/angular.min.js"></script>
+<script src="myApp.js"></script>
+<script src="Templates/Admin/Department/department.js"></script>
+<script src="Templates/Admin/Employee/employee.js"></script>

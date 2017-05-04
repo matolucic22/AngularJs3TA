@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <script src="Scripts/angular.min.js"></script>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body ng-init="a=10; b=[1, 2, 3, 4]">
+    {{5+3}}
+    {{a+a}}
+    <input type="text" ng-model="x" />
+    <span ng-bind="x">
+        
+    </span>
+
+    <ul ng-repeat="k in b">
+        <li>{{k}}</li>
+    </ul>
+
+    <ul ng-repeat="k in b">
+        <li ng-if="k>50">{{k}}</li>
+    </ul>
+
+    <input type="radio" ng-model="G" value="M" />M
+    <input type="radio" ng-model="G" value="F" />F
+    You select:{{G}}
+
+    <input type="checkbox" ng-model="T" ng-true-value="'OK'" ng-false-value="'BAD'"  />
+    {{T}}
+
+</body>
+</html>

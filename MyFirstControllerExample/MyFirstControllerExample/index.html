@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html ng-app="Myapp">
+<head>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/myapp.js"></script>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div ng-controller="MyController">
+        {{MyVal}}
+
+        <input type="text" ng-model="MyVal" />
+
+        <input type="buton" ng-click="myFun()" value="ClickME"/>
+            {{myFun()}}
+        </div>
+    </div>
+</body>
+</html>
